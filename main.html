@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>main</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/13f463b937.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+    
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'last 6 month', 'same period last year'],
+                ['May',  1000,      1400],
+                ['June',  1170,      460],
+                ['July',  660,       1120],
+                ['August',  1030,      540]
+             
+               
+            ]);
+    
+         
+    
+
+
+            var options = {
+            title: 'Earning summary ',
+            hAxis: {title: '',  titleTextStyle: {color: '#333'}},
+            vAxis: {minValue: 0},
+            width: -400, // Adjust the width as desired
+            height: '100%' // Adjust the height as desired
+        };
+
+
+
+
+
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateElement = document.getElementById('date');
+            const today = new Date();
+            dateElement.textContent = today.toDateString();
+        });
+
+
+        fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
+            .then(res => res.json())
+            .then(data => {
+                data.data.forEach(Income => {
+                  if(Income.Year==2020){
+                    const markup = `<p>${Income.Population}</p>`;
+                    document.getElementById('income').insertAdjacentHTML("beforeend", markup);
+            }});
+            })
+            .catch(error => console.log(error));
+
+            fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
+            .then(res => res.json())
+            .then(data => {
+                data.data.forEach(Expenses => {
+                  if(Expenses.Year==2019){
+                    const markup = `<p>${Expenses.Population}</p>`;
+                    document.getElementById('expenses').insertAdjacentHTML("beforeend", markup);
+            }});
+            })
+            .catch(error => console.log(error));
+      </script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Total', '%'],
+      ['hired',     6],
+      ['cancelled',      2],
+      ['pending',  2],
+    
+    ]);
+
+    var options = {
+    title: 'Hired vs Cancelled',
+    pieHole: 0.7,
+    width: 200,
+    height: 250,
+
+
+
+
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>
+   <!----   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work',     11],
+                ['Eat',      2],
+                ['Commute',  2],
+                ['Watch TV', 2],
+                ['Sleep',    7]
+            ]);
+
+            var options = {
+    title: 'My Daily Activities',
+    pieHole: 0.4,
+    width: 200,
+    height: 200,
+    chartArea: {
+        width: '100%',
+        height: '80%'
+    },
+    legend: {
+        position: 'bottom'
+    },
+    backgroundColor: {
+        fill: 'transparent'
+    },
+    is3D: true,
+    fontSize: 12
+};
+
+
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+  -----> 
+
+
+    
+
+
+
+
+
+</head>
+
+<body>
+   
+    <script src="script.js"></script>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <a class="navbar-item" href="dashboard.html" onclick="activateNavItem(this)" target="content">
+            <img src="dashboard.png" alt="Item 1 Icon">
+        </a>
+        <a class="navbar-item" href="#" onclick="activateNavItem(this)">
+            <img src="drivers.png" alt="Item 2 Icon">
+        </a>
+        <a class="navbar-item" href="#" onclick="activateNavItem(this)">
+            <img src="bookings.png" alt="Item 3 Icon">
+        </a>
+        <a class="navbar-item" href="#" onclick="activateNavItem(this)">
+            <img src="notif.png" alt="Item 4 Icon">
+        </a>
+        <a class="navbar-item" href="#" onclick="activateNavItem(this)">
+            <img src="setting.png" alt="Item 4 Icon">
+        </a>
+        <hr>
+        <a class="navbar-item" href="#" onclick="activateNavItem(this)">
+            <img src="pay.png" alt="Item 5 Icon">
+        </a>
+        <a class="navbar-item" href="#" onclick="activateNavItem(this)">
+            <img src="transaction.png" alt="Item 6 Icon">
+        </a>
+        <a class="navbar-item" href="#" onclick="activateNavItem(this)">
+            <img src="carreport.png" alt="Item 7 Icon">
+        </a>
+        <br><br><br>
+        <button type="button" class="logout" onclick="changeButtonColor(this)"><img src="Logout.png"
+                alt="Item 7 Icon"></button>
+
+
+        <br><br>
+    </div>
+    </div>
+
+    <div class="container">
+    
+        <h2>Today's Statistics</h2>
+        <p id="date"></p><br>
+
+        <div class="box">
+          <p class="box-label" style="margin-top: -50px;margin-left: -140px;font-family: Arial; font-size: 16px;">Income</p>
+          <p class="box-label" style="margin-top: -35px;margin-left: 140px;font-family: Arial; font-size: 16px;">Today</p>
+
+         
+
+        <p id="income"></p>
+        </div>
+
+
+        
+        <div class="box">
+        
+            <p class="box-label" style="margin-top: -50px;margin-left: -120px;font-family: Arial; font-size: 16px;">Expenses</p>
+            <p class="box-label" style="margin-top: -35px;margin-left: 140px;font-family: Arial; font-size: 16px;">Today</p>
+          
+            <p id="expenses"></p>
+        </div>
+
+        <div class="box">
+        
+
+
+            <div id="donutchart" class="chart-container" style="width: 50px; height: 50px;"></div>
+
+
+
+        </div>
+    </div>
+    <div class="notification-icon">
+        <i class="fas fa-bell"></i>
+        <span class="notification-dot"></span>
+    </div>
+    <form class="searchbox_1" action="#">
+        <input type="search" class="search_1" placeholder="Search" />
+        <button type="submit" class="submit_1" value="search">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+    <!-- <div class="availability-section">
+        <div class="availability-box">
+          <h2>Car Availability</h2>
+          <div class="car-dropdown">
+            <div class="dropdown-label"></div>
+            <select id="car-number">
+              <option value="" selected disabled>Car Number</option>
+              <option value="car1">Car 1</option>
+              <option value="car2">Car 2</option>
+              <option value="car3">Car 3</option>
+            </select>
+          </div>
+          <div class="date-box">
+            <label for="date" class="dropdown-label"></label>
+            <input type="date" id="date" class="dropdown-input">
+          </div>
+          <div class="time-dropdown">
+            <div class="dropdown-label"></div>
+            <select id="time">
+              <option value="" selected disabled>Time</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="availability-section">
+        <div class="availability-box">
+          <h2>Car Availability</h2>
+
+
+
+
+
+          <div class="selections">
+          <div class="car-dropdown">
+            <div class="dropdown-label"></div>
+            <select id="car-number">
+              <option value="" selected disabled>Car Number</option>
+              <option value="car1">Car 1</option>
+              <option value="car2">Car 2</option>
+              <option value="car3">Car 3</option>
+            </select>
+          </div>
+          <div class="date-box">
+            <label for="date" class="dropdown-label"></label>
+            <input type="date" id="date" class="dropdown-input">
+          </div>
+          
+          <div class="time-dropdown">
+            <div class="dropdown-label"></div>
+            <select id="time">
+              <option value="" selected disabled>Time</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+            
+          </div>
+          <button class="check-button">Check</button>
+        </div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+
+      <div class="live-car-status-section">
+
+
+
+
+  <div class="live-car-status-box">
+    <h2>Live Car Status</h2>
+    <button class="filter-button">
+      <img src="filter.png" alt="Filter Icon"> Filter
+    </button>
+  </div>
+
+
+
+
+
+  <div class="table-container">
+    <table class="live-car-table">
+      <thead>
+        <tr>
+          <th style="color:#656575;">No.</th>
+
+          <th  style="color:#656575;"> Car Number</th>
+          <th style="color:#656575;">Driver</th>
+          <th   style="color:#656575;">  Status</th>
+          <th style="color:#656575;">Earning</th>
+          <th style="color:#656575;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Car 1</td>
+          <td style="background-color:#9999991A ; text-align: center; padding: 2px; display: flex; justify-content: center; align-items: center;padding: 4px 12px;">6465</td>
+          <td><img src="Ellipse 7 (1).png" style="vertical-align: middle; margin-left: 10px;">Alex Noman</td>
+        
+          <td>
+            <img src="Completed.png" style="vertical-align: middle;">
+            <span style="color: #656575;">Completed</span>
+        </td>
+        
+          
+        
+        
+        
+          <td style="color:#656575;"> $34.44</td>
+      
+
+
+
+          <td>
+            <img src="Frame 39964.png"style="height: 25px;">
+          </td>
+       <!--
+          <td style="padding: 5px;">
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: green; border-radius: 50%; margin-right: 5px;"></span>
+           Completed 
+        </td>
+        --->       
+        </tr>
+        <tr>
+          <td>Car 2</td>
+          <td style="background-color:#9999991A ; text-align: center; padding: 2px; display: flex; justify-content: center; align-items: center;">5665</td>
+          <td><img src="Ellipse 7.png" style="vertical-align: middle; margin-left: 10px;">Razib Rahman</td>
+         
+
+          <td>
+            <img src="Pending.png" style="vertical-align: middle;">
+            <span style="color: #656575;">Pending</span>
+        </td>
+         
+          <td style="color:#656575;"> $0.00</td>
+
+          <td>
+            <img src="Frame 39964.png" style="height: 25px;">
+          </td>
+
+</tr>
+         <!---- <td style="padding: 5px;">
+            <span style="display: inline-block; width: 10px; height: 10px; background-color:blue; border-radius: 50%; margin-right: 5px;"></span>
+         Pending
+        </td>
+       
+        </tr>
+      -->
+        <tr>
+          <td>Car 3</td>
+          <td style="background-color:#9999991A ; text-align: center; padding: 2px; display: flex; justify-content: center; align-items: center;">1755</td>
+          <td><img src="Ellipse 7 (3).png" style="vertical-align: middle; margin-left: 10px;">Luke Norton</td>
+         
+          <td>
+            <img src="Radio button.png" style="vertical-align: middle;">
+            <span style="color: #656575;"> In route</span>
+        </td>
+         
+               
+
+
+          <td style="color:#656575;">$23.50</td>
+
+          <td>
+            <img src="Frame 39964.png" style="height: 25px;" >
+          </td>
+
+</tr>
+
+         <!--
+          <td style="padding: 5px;">
+           
+         
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 50%; margin-right: 5px;"></span>
+          In route 
+        </td>
+        
+        </tr>
+        <!-- Add more rows as needed -->
+       
+       
+      </tbody>
+    </table>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="live-section">
+
+
+
+
+    <div class="live-status-box">
+     
+
+
+      
+     
+     
+
+      <div id="chart_div" style="width: 100%; height: 300px;"></div>
+     
+     
+    </div>
+  
+  
+  
+  
+  
+    </div>
+  
+
+
+
+
+
+
+
+   
+
+
+
+
+
+</div>
+</body>
+
+</html>

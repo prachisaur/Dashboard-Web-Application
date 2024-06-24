@@ -1,0 +1,452 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #000;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+.navbar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar-logo img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-item:hover
+{
+    background-color: #333;
+}
+
+.navbar-item.active{
+    background-color: blue;
+} 
+
+.navbar-item img {
+    max-width: 175px;
+    max-height: 175px;
+    margin-right: 10px;
+}
+
+.navbar hr{
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+button {
+    background-color: transparent;
+    padding: 14px 20px;
+    border: none;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.logout {
+    width: auto;
+    padding: 10px 18px;
+    background-color: transparent;
+}
+
+.logout.clicked {
+    background-color: red;
+}
+
+ .container {
+    margin-top: -50px;
+    margin-left: 250px;
+    margin-right: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+     justify-content: center; 
+    background-color: rgba(248, 247, 241, 1);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+} 
+
+
+
+.box {
+    /* margin-left: 15px; */
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 24px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+.chart-container {
+    margin-left: -150px; /* Adjust the left margin as desired */
+}
+
+
+#income-heading {      
+  margin-bottom: -10px; /* Adjust the margin as desired */
+}
+
+#income {
+  /* Existing CSS styles for #income */
+  margin-top: -0px; /* Adjust the margin as desired */
+  font-weight: bold;
+}
+
+
+
+#expenses {
+  /* Existing CSS styles for #income */
+  margin-top: 10px; /* Adjust the margin as desired */
+  font-weight: bold;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 120px;
+    margin-bottom: 10px;
+    margin-left: -100px;
+}
+
+
+#date {
+    margin-top: -10px;
+}
+
+.circle.hired {
+    background-color: blue;
+}
+
+.circle.cancelled {
+    background-color: green;
+}
+
+.circle.pending {
+    background-color: red;
+}
+
+.circle-text {
+    color: black;
+    font-size: 16px;
+    margin-top: -50px;
+    margin-left: 30px;
+}
+ .searchbox_1{
+    
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    
+    } 
+    
+    .search_1{
+        width: 200px;
+        height: 20px;
+        padding-left: 15px;
+        border-radius: 6px;
+        border: none;
+        color: #0F0D0D;
+        font-weight: 500;
+        background-color: #E2EFF7;
+        padding-right: 30px;
+    }
+    
+    
+    .search_1:focus{
+    outline:0;
+    }
+
+    .submit_1 {
+        width: 35px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    top: 15%;
+    right: -7px; 
+    transform: translateY(-50%)
+    }
+    
+    .submit_1 i {
+        color: #000;
+    }
+
+    .notification-icon {
+    position: absolute;
+    right: 200px;
+    top: 22px;
+    
+}
+
+.notification-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.availability-box {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 900px;
+    margin-left: 600px;
+    margin-right: 10px;
+    margin-top: -900px;
+}
+
+.availability-box h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.selections{
+    display: flex;
+    gap: 55px;
+    padding: 12px 36px;
+    
+    color: #FFFFFF;
+    border-radius: 4px;
+    
+}
+
+.check-button {
+    
+    background-color: blue;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+
+.live-car-status-section {
+    margin-top: 20px;
+  }
+  
+  .live-car-status-box {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 900px;
+    margin-left: 600px;
+    margin-right: 10px;
+    margin-top: -800px;
+  }
+  
+  .live-car-status-box h2 {
+    margin: 0;
+  }
+  
+  .filter-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: -500px;
+  }
+  
+  .filter-button img {
+    margin-right: 5px;
+  }
+  
+  
+  
+  .table-container {
+    height: 200px; /* Adjust the height as needed */
+    overflow: auto;
+    display: flex;
+    margin-bottom: 900px;
+    margin-left: 600px;
+    margin-right: 10px;
+    margin-top: -875px;
+    
+  }
+  
+  .live-car-table {
+    width: 100%;
+  }
+  
+  .live-car-table th,
+  .live-car-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .live-car-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .live-car-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  
+ 
+ 
+  
+ 
+
+
+
+
+  
+  
+ 
+  
+.live-status-section {
+    margin-top: 20px;
+  }
+  
+  .live-status-box {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  
+  
+
+    height: 336px; 
+
+
+    margin-bottom: 900px;
+    margin-left: 600px;
+    margin-right: 10px;
+    margin-top: -875px;
+  }
+  
+ 
+
+
+
+  
+  #chart_div {
+    width: 100%;
+    height: 100%;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  .live-status-box h2 {
+    margin: 0;
+  }
+  
+
+
+  
+  .table-container {
+    height: 200px; /* Adjust the height as needed */
+    overflow: auto;
+    display: flex;
+    margin-bottom: 900px;
+    margin-left: 600px;
+    margin-right: 10px;
+    margin-top: -875px;
+    
+  }
+  
+  .live-table {
+    width: 100%;
+  }
+  
+  .live-table th,
+  .live-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .live-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .live-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+
+
+
+
+
+  
+
+
