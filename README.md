@@ -33,15 +33,16 @@ This repository contains the code for a dashboard web application. The applicati
 
 ### Usage
 
-- Open the `index.html` file in your web browser to view the dashboard.
+- Open the `main.html` file in your web browser to view the dashboard.
 - Navigate through the different sections using the navigation bar on the left.
 - View the live car status, earning summary, and various statistics dynamically updated from external data sources.
 
 ## File Structure
 
-- `index.html`: The main HTML file for the dashboard.
+- `main.html`: The main HTML file for the dashboard website.
 - `style.css`: The CSS file for styling the dashboard.
 - `script.js`: The JavaScript file for additional client-side functionality.
+
 
 ## External Libraries and APIs
 
